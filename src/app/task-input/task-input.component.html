@@ -1,6 +1,6 @@
 <br>
 <form [formGroup]="taskForm" (ngSubmit)="onSubmit(taskForm.value)">
     <div>
-        <input id="newTask" type="text" formControlName="taskName" placeholder="Enter a new task">
+        <input id="newTask" type="text" formControlName="taskName" placeholder="Enter a new task" autocomplete="off" required>
     </div>
 </form>

@@ -1,0 +1,227 @@
+/* Imports */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* End of Imports */
+
+
+/* CSS RESET */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* END OF CSS RESET */
+
+
+
+/* CUSTOM CSS */
+html {
+  background-color: #fff;
+}
+
+body {
+  background-color: #f3ecc2;
+  color: #222;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 6px;
+  margin: auto;
+  margin: 2rem auto;
+  padding: 8rem 4rem;
+  width: 100%;
+  max-width: 50rem;
+  box-sizing: border-box;
+  box-shadow: 10px 10px 0 hsla(51, 47%, 83%, 1);
+}
+
+h1 {
+  font-family: 'Times New Roman', sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: .5rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+
+
+
+button, select,
+input[type='submit'],
+input[type='button'],
+input[type='checkbox'],
+input[type='range'],
+input[type='radio'] {
+  cursor: pointer;
+}
+
+
+input,
+button,
+textarea,
+select {
+  color: #444;
+  background-color: hsla(51, 57%, 76%, 1);
+
+  font-family: inherit;
+  font-size: inherit;
+
+  padding: 10px;
+
+  border: none;
+  border-radius: 6px;
+  outline: none;
+
+  -webkit-appearance: none;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  margin-right: 2px;
+}
+
+input[type='checkbox']:checked,
+input[type='radio']:checked {
+  background: hsla(51, 57%, 76%, 1);
+}
+
+input[type='checkbox']:checked::before,
+input[type='radio']:checked::before {
+  content: '•';
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+input[type='checkbox']:checked::before {
+  content: '✔';
+  transform: translateY(-50%) translateY(0.5px) translateX(-6px);
+}
+
+
+input:not([type = checkbox]) {
+  background-color: transparent;
+  border: none;
+}
+
+input::placeholder {
+  color: #444;
+}
+
+
+
+
+#newTask {
+  background-color: hsla(51, 57%, 76%, 1);
+  border-radius: 6px;
+  color: #111;
+  font-size: 1rem;
+  margin: 1rem 0 2rem;
+  padding: .75rem 1rem;
+  width: 20rem;
+}
+
+#newTask:focus {
+  box-shadow: 0 0 0 2px hsla(51, 46%, 62%, 1);
+}
+
+
+.list-wrapper {
+  width: 100%;
+  max-width: 22rem;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+}
+.task-item:not(last-child) {
+  margin-bottom: 1rem;
+}
+
+
+
+.task-name {
+  width: 15.4rem;
+}
+
+.delete-btn {
+  display: none;
+  background-color: transparent;
+}
+.delete-btn:hover {
+  background-color: hsla(51, 57%, 76%, 1);
+}
+.task-item:hover > .delete-btn {
+  display: block;
+}
+
+
+.divider {
+  background-color: hsla(51, 53%, 82%, 1);
+  width: 22.2rem;
+  height: 2px;
+  margin-bottom: 1rem;
+
+}
+
+
+.done-list .task-item .task-status, .done-list .task-item .task-name {
+  opacity: 0.7;
+}
+.done-list .task-item .task-name {
+  font-style: italic;
+  text-decoration: line-through;
+}

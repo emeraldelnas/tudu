@@ -1,17 +1,24 @@
-<p>to-do</p>
-<div *ngFor="let task of tasks; index as i" style="display: flex; align-items: center;">
-    <div *ngIf="!task.completed">
-        <input type="checkbox" id="taskStatus" name="taskStatus" [(ngModel)]="tasks[i].completed">
-        <input type="text" id="taskName" [(ngModel)]="tasks[i].taskName">
-        <button (click)="deleteTask(task.taskId)">Delete</button>
+<div class="list-wrapper">
+    <div class="todo-list">
+        <div *ngFor="let task of tasks; index as i">
+            <div class="task-item" *ngIf="!task.completed">
+                <input type="checkbox" class="task-status" name="taskStatus" [(ngModel)]="tasks[i].completed">
+                <input type="text" class="task-name" [(ngModel)]="tasks[i].taskName">
+                <button class="delete-btn" (click)="deleteTask(task.taskId)">Delete</button>
+            </div>
+        </div>
     </div>
-</div>
 
-<p>done</p>
-<div *ngFor="let task of tasks; index as i" style="display: flex; align-items: center;">
-    <div *ngIf="task.completed">
-        <input type="checkbox" id="taskStatus" name="taskStatus" [(ngModel)]="tasks[i].completed">
-        <input type="text" id="taskName" [(ngModel)]="tasks[i].taskName">
-        <button (click)="deleteTask(task.taskId)">Delete</button>
+    <div class="divider"></div>
+
+    <div class="done-list">
+        <div *ngFor="let task of tasks; index as i">
+            <div class="task-item" *ngIf="task.completed">
+                <input type="checkbox" class="task-status" name="taskStatus" [(ngModel)]="tasks[i].completed">
+                <input type="text" class="task-name" [(ngModel)]="tasks[i].taskName">
+                <button class="delete-btn" (click)="deleteTask(task.taskId)">Delete</button>
+            </div>
+        </div>
     </div>
+
 </div>
