@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
+import { Task } from './interfaces/Task';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TaskService {
-  tasks = [];
+  tasks: Task[] = [];
 
   constructor() { }
 
-  addNewTask(taskName) {
-    let taskId = this.tasks.length + 1;
+  addNewTask(taskName: string): void {
+    console.log(Object.keys(this.tasks).length);
+    let taskId = Object.keys(this.tasks).length + 1;
     let completed = false;
 
     this.tasks.push({
@@ -19,20 +21,20 @@ export class TaskService {
     });
   }
 
-  deleteTask(taskId) {
+  deleteTask(taskId: number): void {
     let taskToDelete = this.findTaskIndex(taskId);
     this.tasks.splice(taskToDelete, 1);
   }
 
-  findTaskIndex(taskId) {
+  findTaskIndex(taskId): number {
     return this.tasks.findIndex(task => task.taskId === taskId)
   }
 
-  getTasks() {
+  getTasks(): Task[] {
     return this.tasks;
   }
 
-  clearTasks() {
+  clearTasks(): Task[] {
     this.tasks = [];
     return this.tasks;
   }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { TaskService } from '../task.service';
+import { Task } from '../interfaces/Task';
 
 @Component({
   selector: 'app-todo-list',
@@ -9,7 +10,7 @@ import { TaskService } from '../task.service';
 })
 export class TodoListComponent implements OnInit {
 
-  tasks;
+  tasks: Task[] = [];
 
   constructor(private taskService: TaskService) { }
 
@@ -17,7 +18,7 @@ export class TodoListComponent implements OnInit {
     this.tasks = this.taskService.getTasks();
   }
 
-  deleteTask(taskId) {
+  deleteTask(taskId: number) {
     this.taskService.deleteTask(taskId);
   }
 
