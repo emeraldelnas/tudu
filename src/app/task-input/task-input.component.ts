@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Validators } from '@angular/forms';
 
 import { TaskService } from '../task.service';
@@ -11,7 +11,7 @@ import { Task } from '../interfaces/Task';
   styleUrls: ['./task-input.component.css']
 })
 export class TaskInputComponent implements OnInit {
-  taskForm;
+  taskForm: FormGroup;
 
   constructor(
     private taskService: TaskService,
