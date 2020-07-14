@@ -1,0 +1,17 @@
+<p>to-do</p>
+<div *ngFor="let task of tasks; index as i" style="display: flex; align-items: center;">
+    <div *ngIf="!task.completed">
+        <input type="checkbox" id="taskStatus" name="taskStatus" [(ngModel)]="tasks[i].completed">
+        <input type="text" id="taskName" [(ngModel)]="tasks[i].taskName">
+        <button (click)="deleteTask(task.taskId)">Delete</button>
+    </div>
+</div>
+
+<p>done</p>
+<div *ngFor="let task of tasks; index as i" style="display: flex; align-items: center;">
+    <div *ngIf="task.completed">
+        <input type="checkbox" id="taskStatus" name="taskStatus" [(ngModel)]="tasks[i].completed">
+        <input type="text" id="taskName" [(ngModel)]="tasks[i].taskName">
+        <button (click)="deleteTask(task.taskId)">Delete</button>
+    </div>
+</div>
