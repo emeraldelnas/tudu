@@ -10,9 +10,8 @@ export class TaskService {
   constructor() { }
 
   addNewTask(taskName: string): void {
-    console.log(Object.keys(this.tasks).length);
-    let taskId = Object.keys(this.tasks).length + 1;
-    let completed = false;
+    const taskId = Object.keys(this.tasks).length + 1;
+    const completed = false;
 
     this.tasks.push({
       taskId,
@@ -22,7 +21,7 @@ export class TaskService {
   }
 
   deleteTask(taskId: number): void {
-    let taskToDelete = this.findTaskIndex(taskId);
+    const taskToDelete = this.findTaskIndex(taskId);
     this.tasks.splice(taskToDelete, 1);
   }
 
