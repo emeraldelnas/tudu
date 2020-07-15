@@ -110,7 +110,7 @@ input,
 button,
 textarea,
 select {
-  color: #444;
+  color: #333;
   background-color: hsla(51, 57%, 76%, 1);
 
   font-family: inherit;
@@ -163,7 +163,7 @@ input:not([type = checkbox]) {
 }
 
 input::placeholder {
-  color: #444;
+  color: #333;
 }
 
 
