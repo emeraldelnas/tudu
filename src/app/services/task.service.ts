@@ -6,11 +6,12 @@ import { Task } from '../interfaces/Task';
 })
 export class TaskService {
   private tasks: Task[] = [];
+  private nextId = 0;
 
   constructor() { }
 
   addNewTask(taskName: string): void {
-    const taskId = Object.keys(this.tasks).length + 1;
+    const taskId = this.nextId++;
     const completed = false;
 
     const newTask: Task = {
@@ -18,7 +19,7 @@ export class TaskService {
       taskName,
       completed
     };
-
+    
     this.tasks.push(newTask);
   }
 
