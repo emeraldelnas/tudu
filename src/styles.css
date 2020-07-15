@@ -231,7 +231,9 @@ input::placeholder {
   text-decoration: line-through;
 }
 
-
+.svg-icon {
+  display: flex;
+}
 
 
 @media (max-width: 799px) {
