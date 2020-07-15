@@ -10,7 +10,7 @@ import { Task } from '../interfaces/Task';
 })
 export class TodoListComponent implements OnInit {
 
-  private tasks: Task[] = [];
+  tasks: Task[] = [];
 
   constructor(private taskService: TaskService) { }
 

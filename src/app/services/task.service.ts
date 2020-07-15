@@ -9,7 +9,7 @@ export class TaskService {
 
   constructor() { }
 
-  private addNewTask(taskName: string): void {
+  addNewTask(taskName: string): void {
     const taskId = Object.keys(this.tasks).length + 1;
     const completed = false;
 
@@ -22,20 +22,20 @@ export class TaskService {
     this.tasks.push(newTask);
   }
 
-  private deleteTask(taskId: number): void {
+  deleteTask(taskId: number): void {
     const taskToDelete = this.findTaskIndex(taskId);
     this.tasks.splice(taskToDelete, 1);
   }
 
-  private findTaskIndex(taskId:number ): number {
+  findTaskIndex(taskId:number ): number {
     return this.tasks.findIndex(task => task.taskId === taskId)
   }
 
-  private getTasks(): Task[] {
+  getTasks(): Task[] {
     return this.tasks;
   }
 
-  private clearTasks(): Task[] {
+  clearTasks(): Task[] {
     this.tasks = [];
     return this.tasks;
   }

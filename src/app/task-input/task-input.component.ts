@@ -11,7 +11,7 @@ import { Task } from '../interfaces/Task';
   styleUrls: ['./task-input.component.css']
 })
 export class TaskInputComponent implements OnInit {
-  private taskForm: FormGroup;
+  taskForm: FormGroup;
 
   constructor(
     private taskService: TaskService,
@@ -26,7 +26,7 @@ export class TaskInputComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  private onSubmit(task: Task): void {
+  onSubmit(task: Task): void {
     this.taskService.addNewTask(task.taskName);
     this.taskForm.reset();
   }
