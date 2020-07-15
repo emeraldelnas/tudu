@@ -18,7 +18,7 @@ export class TodoListComponent implements OnInit {
     this.tasks = this.taskService.getTasks();
   }
 
-  private deleteTask(taskId: number): void {
+  deleteTask(taskId: number): void {
     this.taskService.deleteTask(taskId);
   }
 
