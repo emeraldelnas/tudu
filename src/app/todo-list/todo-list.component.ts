@@ -10,7 +10,7 @@ import { Task } from '../interfaces/Task';
 })
 export class TodoListComponent implements OnInit {
 
-  tasks: Task[] = [];
+  private tasks: Task[] = [];
 
   constructor(private taskService: TaskService) { }
 
@@ -18,7 +18,7 @@ export class TodoListComponent implements OnInit {
     this.tasks = this.taskService.getTasks();
   }
 
-  deleteTask(taskId: number) {
+  private deleteTask(taskId: number): void {
     this.taskService.deleteTask(taskId);
   }
 

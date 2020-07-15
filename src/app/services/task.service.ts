@@ -5,35 +5,37 @@ import { Task } from '../interfaces/Task';
   providedIn: 'root'
 })
 export class TaskService {
-  tasks: Task[] = [];
+  private tasks: Task[] = [];
 
   constructor() { }
 
-  addNewTask(taskName: string): void {
+  private addNewTask(taskName: string): void {
     const taskId = Object.keys(this.tasks).length + 1;
     const completed = false;
 
-    this.tasks.push({
+    const newTask: Task = {
       taskId,
       taskName,
       completed
-    });
+    };
+
+    this.tasks.push(newTask);
   }
 
-  deleteTask(taskId: number): void {
+  private deleteTask(taskId: number): void {
     const taskToDelete = this.findTaskIndex(taskId);
     this.tasks.splice(taskToDelete, 1);
   }
 
-  findTaskIndex(taskId): number {
+  private findTaskIndex(taskId:number ): number {
     return this.tasks.findIndex(task => task.taskId === taskId)
   }
 
-  getTasks(): Task[] {
+  private getTasks(): Task[] {
     return this.tasks;
   }
 
-  clearTasks(): Task[] {
+  private clearTasks(): Task[] {
     this.tasks = [];
     return this.tasks;
   }

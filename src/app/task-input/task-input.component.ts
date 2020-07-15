@@ -11,12 +11,13 @@ import { Task } from '../interfaces/Task';
   styleUrls: ['./task-input.component.css']
 })
 export class TaskInputComponent implements OnInit {
-  taskForm: FormGroup;
+  private taskForm: FormGroup;
 
   constructor(
     private taskService: TaskService,
     private formBuilder: FormBuilder,
   ) {
+
     this.taskForm = this.formBuilder.group({
       taskName : ['', Validators.required],
     });
@@ -25,7 +26,7 @@ export class TaskInputComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(task: Task): void {
+  private onSubmit(task: Task): void {
     this.taskService.addNewTask(task.taskName);
     this.taskForm.reset();
   }
