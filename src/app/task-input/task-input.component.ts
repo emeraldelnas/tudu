@@ -17,7 +17,6 @@ export class TaskInputComponent implements OnInit {
     private taskService: TaskService,
     private formBuilder: FormBuilder,
   ) {
-
     this.taskForm = this.formBuilder.group({
       taskName : ['', Validators.required],
     });

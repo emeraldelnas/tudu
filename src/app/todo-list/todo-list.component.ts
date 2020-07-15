@@ -18,6 +18,10 @@ export class TodoListComponent implements OnInit {
     this.tasks = this.taskService.getTasks();
   }
 
+  updateLocalStorageTasks(): void {
+    this.taskService.saveTasksToLocalStorage();
+  }
+
   deleteTask(taskId: number): void {
     this.taskService.deleteTask(taskId);
   }
