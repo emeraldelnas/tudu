@@ -59,6 +59,10 @@ table {
 
 
 /* CUSTOM CSS */
+* {
+  box-sizing: border-box;
+}
+
 html {
   background-color: #fff;
 }
@@ -73,7 +77,6 @@ body {
   padding: 8rem 4rem;
   width: 100%;
   max-width: 50rem;
-  box-sizing: border-box;
   box-shadow: 10px 10px 0 hsla(51, 47%, 83%, 1);
 }
 
@@ -87,6 +90,9 @@ p {
   font-size: 1rem;
 }
 
+.wrapper {
+  width: 55%;
+}
 
 
 
@@ -170,7 +176,7 @@ input::placeholder {
   font-size: 1rem;
   margin: 1rem 0 2rem;
   padding: .75rem 1rem;
-  width: 20rem;
+  width: 100%;
 }
 
 #newTask:focus {
@@ -180,7 +186,6 @@ input::placeholder {
 
 .list-wrapper {
   width: 100%;
-  max-width: 22rem;
 }
 
 .task-item {
@@ -194,7 +199,7 @@ input::placeholder {
 
 
 .task-name {
-  width: 15.4rem;
+  width: 100%;
 }
 
 .delete-btn {
@@ -211,7 +216,7 @@ input::placeholder {
 
 .divider {
   background-color: hsla(51, 53%, 82%, 1);
-  width: 22.2rem;
+  width: 100%;
   height: 2px;
   margin-bottom: 1rem;
 
@@ -224,4 +229,23 @@ input::placeholder {
 .done-list .task-item .task-name {
   font-style: italic;
   text-decoration: line-through;
+}
+
+
+
+
+@media (max-width: 799px) {
+  body {
+    margin: 4vw;
+    width: auto;
+  }
+}
+
+@media (max-width: 639px) {
+  body {
+    padding: 4rem 2rem;
+  }
+  .wrapper {
+    width: 100%;
+  }
 }
