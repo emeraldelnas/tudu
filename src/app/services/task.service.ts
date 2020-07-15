@@ -11,10 +11,10 @@ export class TaskService {
   constructor() { }
 
   addNewTask(taskName: string): void {
-    const taskId = this.nextId++;
+    let taskId = this.nextId++;
     const completed = false;
 
-    const newTask: Task = {
+    let newTask: Task = {
       taskId,
       taskName,
       completed
@@ -24,7 +24,7 @@ export class TaskService {
   }
 
   deleteTask(taskId: number): void {
-    const taskToDelete = this.findTaskIndex(taskId);
+    let taskToDelete = this.findTaskIndex(taskId);
     this.tasks.splice(taskToDelete, 1);
   }
 
