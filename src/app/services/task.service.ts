@@ -17,8 +17,6 @@ export class TaskService {
     let taskId = ++this.nextId;
     const completed = false;
 
-    console.log(taskId);
-
     let newTask: Task = {
       taskId,
       taskName,
